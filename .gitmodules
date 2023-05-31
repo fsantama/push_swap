@@ -1,0 +1,6 @@
+[submodule "inc/Libft"]
+	path = inc/Libft
+	url = git@github.com:fsantama/Libft.git
+[submodule "inc/ft_printf"]
+	path = inc/ft_printf
+	url = git@github.com:fsantama/ft_printf.git

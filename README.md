@@ -1,2 +1,2 @@
 # push_swap
-a 42Cursus project
+A 42Cursus project
