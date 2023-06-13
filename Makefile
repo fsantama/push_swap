@@ -6,7 +6,7 @@
 #    By: fsantama <fsantama@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/24 13:37:38 by fsantama          #+#    #+#              #
-#    Updated: 2023/06/13 13:19:28 by fsantama         ###   ########.fr        #
+#    Updated: 2023/06/13 16:11:56 by fsantama         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,6 +31,7 @@ SRCS	=	src/main.c \
 			src/ft_check_args.c \
 			src/ft_check_num.c \
 			src/ft_check_limits.c \
+			src/ft_atoi_long.c \
 
 OBJS	=	$(SRCS:.c=.o)
 

@@ -1,26 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check_limits.c                                  :+:      :+:    :+:   */
+/*   ft_atoi_long.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fsantama <fsantama@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/13 13:04:26 by fsantama          #+#    #+#             */
-/*   Updated: 2023/06/13 16:14:43 by fsantama         ###   ########.fr       */
+/*   Created: 2023/06/13 16:08:45 by fsantama          #+#    #+#             */
+/*   Updated: 2023/06/13 16:09:44 by fsantama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-int	ft_check_limits(char *str)
+long	ft_atoi_long(const char *str)
 {
-	long	n;
+	int		i;
+	int		sign;
+	long	b;
 
-	n = ft_atoi_long(str);
-	if (n > INT_MAX || n < INT_MIN)
+	i = 0;
+	sign = 1;
+	b = 0;
+	while ((str[i] >= '\t' && str[i] <= '\r') || str[i] == 32)
+		i++;
+	if (str[i] == 45)
+		sign *= -1;
+	if (str[i] == 43 || sign == -1)
+		i++;
+	while (str[i] >= '0' && str[i] <= '9')
 	{
-		ft_putstr_fd("Error\n", 2);
-		return (1);
+		b = (str[i] - '0') + (b * 10);
+		i++;
 	}
-	return (0);
+	return (sign * b);
 }
