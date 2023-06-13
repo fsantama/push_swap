@@ -1,23 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_check_limits.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fsantama <fsantama@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/31 18:45:00 by fsantama          #+#    #+#             */
-/*   Updated: 2023/06/13 14:06:03 by fsantama         ###   ########.fr       */
+/*   Created: 2023/06/13 13:04:26 by fsantama          #+#    #+#             */
+/*   Updated: 2023/06/13 13:17:12 by fsantama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-int	main(int argc, char **argv)
+int	ft_check_limits(char *str)
 {
-	if (argc > 1)
+	long	n;
+
+	n = ft_atoi(str);
+	if (n > INT_MAX || n < INT_MIN)
 	{
-		if (ft_check_args(++argv) == 1)
-			return (1);
+		ft_putstr_fd("El número supera los límites\n", 2);
+		return (1);
 	}
 	return (0);
 }
