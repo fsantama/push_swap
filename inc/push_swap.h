@@ -6,7 +6,7 @@
 /*   By: fsantama <fsantama@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/31 18:38:30 by fsantama          #+#    #+#             */
-/*   Updated: 2023/06/08 14:39:32 by fsantama         ###   ########.fr       */
+/*   Updated: 2023/06/13 13:14:27 by fsantama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ typedef struct	push_swap_list
 
 int	main(int argc, char **argv);
 int	ft_check_args(char **argv);
-int	ft_check_num(char *argv);
-int	ft_check_limits(char *argv);
+int	ft_check_num(char *str);
+int	ft_check_limits(char *str);
 
 #endif

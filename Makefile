@@ -6,7 +6,7 @@
 #    By: fsantama <fsantama@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/24 13:37:38 by fsantama          #+#    #+#              #
-#    Updated: 2023/05/31 18:35:55 by fsantama         ###   ########.fr        #
+#    Updated: 2023/06/13 13:19:28 by fsantama         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,6 +28,9 @@ PRINTF 	=	./inc/ft_printf/libftprintf.a
 # =============================================================================#
 
 SRCS	=	src/main.c \
+			src/ft_check_args.c \
+			src/ft_check_num.c \
+			src/ft_check_limits.c \
 
 OBJS	=	$(SRCS:.c=.o)
 
