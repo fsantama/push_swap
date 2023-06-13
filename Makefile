@@ -6,7 +6,7 @@
 #    By: fsantama <fsantama@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/24 13:37:38 by fsantama          #+#    #+#              #
-#    Updated: 2023/05/31 18:09:37 by fsantama         ###   ########.fr        #
+#    Updated: 2023/05/31 18:35:55 by fsantama         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,14 +27,13 @@ PRINTF 	=	./inc/ft_printf/libftprintf.a
 #                              MANDATORY PART                                  #
 # =============================================================================#
 
-SRCS	=	main.c \
+SRCS	=	src/main.c \
 
 OBJS	=	$(SRCS:.c=.o)
 
 # =============================================================================#
 #                                  RULES                                       #  
 # =============================================================================#
-
 
 all : $(NAME) $(LIBFT) $(PRINTF)
 
@@ -45,6 +44,7 @@ $(PRINTF) :
 	@make  -C inc/ft_printf > /dev/null
 
 $(NAME) : $(LIBFT) $(OBJS) | $(PRINTF) $(OBJS)
+	@$(CC) $(CFLAGS) $(LIBFT) $(PRINTF) $(OBJS) -o $(NAME)
 	@echo "$(CYAN) ======================================================="
 	@echo " |    ___           _                                  |"
 	@echo " |   / _ \_   _ ___| |__      _____      ____ _ _ __   |"
@@ -84,10 +84,9 @@ $(NAME) : $(LIBFT) $(OBJS) | $(PRINTF) $(OBJS)
 	@echo "$(GREEN) $(LIBFT) make done ✅ $(DEFAULT)"
 	@echo "$(GREEN) $(PRINTF) make done ✅ $(DEFAULT)"
 	@echo " "
-	@$(CC) $(CFLAGS) $(LIBFT) $(PRINTF) $(OBJS) -o $(NAME)
 
 %.o : %.c
-	@$(CC) $(CFLAGS) $< -c
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 clean :
 	@rm -f $(OBJS)

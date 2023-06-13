@@ -1,30 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fsantama <fsantama@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/31 18:38:30 by fsantama          #+#    #+#             */
-/*   Updated: 2023/06/08 14:39:32 by fsantama         ###   ########.fr       */
+/*   Created: 2023/05/31 18:45:00 by fsantama          #+#    #+#             */
+/*   Updated: 2023/05/31 19:14:50 by fsantama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H 
-# define PUSH_SWAP_H 
+#include "../inc/push_swap.h"
 
-# include "Libft/libft.h"
-# include "ft_printf/ft_printf.h"
-# include <limits.h>
-
-typedef struct	push_swap_list
+int	main(int argc, char **argv)
 {
-	
-}	ps_list;
+	(void) argv;
 
-int	main(int argc, char **argv);
-int	ft_check_args(char **argv);
-int	ft_check_num(char *argv);
-int	ft_check_limits(char *argv);
-
-#endif
+	if (argc < 2)
+		exit(0);
+	return (0);
+}
