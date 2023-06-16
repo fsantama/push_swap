@@ -1,29 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check_num.c                                     :+:      :+:    :+:   */
+/*   ft_check_repeat_numbers.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fsantama <fsantama@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: fsantama <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/13 11:44:12 by fsantama          #+#    #+#             */
-/*   Updated: 2023/06/16 15:03:34 by fsantama         ###   ########.fr       */
+/*   Created: 2023/06/16 14:00:46 by fsantama          #+#    #+#             */
+/*   Updated: 2023/06/16 14:54:09 by fsantama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-int	ft_check_num(char *str)
+int	ft_check_repeat(ps_list *ps, int n, int index)
 {
 	int	i;
 
 	i = 0;
-	if (str[i] == '-')
-		i++;
-	while (str[i])
+	while (i < index)
 	{
-		if (ft_isdigit(str[i]) == 0)
+		if (ps->sa[i] == n)
 			return (1);
 		i++;
+	}
+	return (0);
+}
+
+int	ft_check_repeat_numbers(ps_list *ps)
+{
+	int	i;
+
+	i = 0;
+	while(i < ps->na)
+	{
+		if (ft_check_repeat(ps, ps->sa[i], i))
+			i++;
+		else
+		{
+//			ft_putstr_fd("Error\n", 2);
+			return (1);
+		}
 	}
 	return (0);
 }

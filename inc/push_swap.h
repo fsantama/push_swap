@@ -6,7 +6,7 @@
 /*   By: fsantama <fsantama@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/31 18:38:30 by fsantama          #+#    #+#             */
-/*   Updated: 2023/06/13 16:11:24 by fsantama         ###   ########.fr       */
+/*   Updated: 2023/06/16 14:22:53 by fsantama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,11 @@
 
 typedef struct	push_swap_list
 {
-	
+	int	*sa;
+	int	*sb;
+	int	na;
+	int	nb;
+	int	nab;
 }	ps_list;
 
 int		main(int argc, char **argv);
@@ -27,5 +31,11 @@ int		ft_check_args(char **argv);
 int		ft_check_num(char *str);
 int		ft_check_limits(char *str);
 long	ft_atoi_long(const char *str);
-
+void	ft_free(ps_list *ps, int action);
+int		start_stacl(ps_list *ps, int size);
+int		char_to_int(ps_list *ps, int argc, char **argv);
+int		ft_check_order(ps_list *ps, int size);
+void	ft_free2(ps_list *ps);
+int		ft_check_repeat_numbers(ps_list *ps);
+int		ft_check_repeat(ps_list *ps, int n, int index);
 #endif
