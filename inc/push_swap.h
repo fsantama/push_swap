@@ -6,7 +6,7 @@
 /*   By: fsantama <fsantama@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/31 18:38:30 by fsantama          #+#    #+#             */
-/*   Updated: 2023/06/19 13:41:21 by fsantama         ###   ########.fr       */
+/*   Updated: 2023/06/19 17:05:04 by fsantama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,4 +38,11 @@ int		ft_check_order(ps_list *ps, int size);
 void	ft_free2(ps_list *ps);
 int		ft_check_repeat_numbers(ps_list *ps);
 int		ft_check_repeat(ps_list *ps, int n, int index);
+void	ft_2args(int *n);
+void	ft_sa(int *sa);
+void	ft_3args(ps_list *ps, int *n);
+void	ft_ra(ps_list *ps);
+void	ft_swap(int *a, int *b);
+void	ft_rra(ps_list *ps);
+
 #endif

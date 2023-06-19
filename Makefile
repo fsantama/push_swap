@@ -6,7 +6,7 @@
 #    By: fsantama <fsantama@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/24 13:37:38 by fsantama          #+#    #+#              #
-#    Updated: 2023/06/16 14:22:37 by fsantama         ###   ########.fr        #
+#    Updated: 2023/06/19 17:05:25 by fsantama         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,6 +35,12 @@ SRCS	=	src/main.c \
 			src/ft_free.c \
 			src/ft_check_order.c \
 			src/ft_check_repeat_numbers.c \
+			src/ft_2args.c \
+			src/ft_sa.c \
+			src/ft_3args.c \
+			src/ft_ra.c \
+			src/ft_swap.c \
+			src/ft_rra.c \
 
 OBJS	=	$(SRCS:.c=.o)
 

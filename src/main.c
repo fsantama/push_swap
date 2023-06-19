@@ -6,7 +6,7 @@
 /*   By: fsantama <fsantama@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/31 18:45:00 by fsantama          #+#    #+#             */
-/*   Updated: 2023/06/19 13:41:38 by fsantama         ###   ########.fr       */
+/*   Updated: 2023/06/19 17:14:56 by fsantama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,18 @@
 // de estos, ordenamos de una manera u otra
 int	choose_args(int argc, ps_list *ps)
 {
-//	(void) argc;
-
 	if (ft_check_order(ps, argc) == 1)
 		return (1);
-	
 	else
-		/*
 	{
 		if (argc == 2)
-			ft_2args
-*/
-		return (0);
+			ft_2args(ps->sa);
+		if (argc == 3)
+			ft_3args(ps, ps->sa);
+//		if (argc == 4)
+//			ft_4 args(ps, ps->sa);
+	}
+	return (0);
 }
 // Pasamos los argumentos de tipo char a int
 int	char_to_int(ps_list *ps, int argc, char **argv)
