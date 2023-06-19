@@ -6,7 +6,7 @@
 /*   By: fsantama <fsantama@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/31 18:45:00 by fsantama          #+#    #+#             */
-/*   Updated: 2023/06/16 15:09:17 by fsantama         ###   ########.fr       */
+/*   Updated: 2023/06/19 13:41:38 by fsantama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@
 // de estos, ordenamos de una manera u otra
 int	choose_args(int argc, ps_list *ps)
 {
-	(void) argc;
+//	(void) argc;
 
-	if (ft_check_repeat_numbers(ps) == 1)
+	if (ft_check_order(ps, argc) == 1)
 		return (1);
 	
 	else
@@ -37,8 +37,10 @@ int	char_to_int(ps_list *ps, int argc, char **argv)
 	i = 0;
 	while (i < argc)
 	{
+//		if (ft_check_num(argv[i + 1]) == 1)
+//			return (1);
 		ps->sa[i] = ft_atoi_long(argv[i]);
-		printf(" valor de sa[%d] = %d", i, ps->sa[i]);
+//		printf(" valor de sa[%d] = %d", i, ps->sa[i]);
 		i++;
 	}
 	return (0);
@@ -90,10 +92,12 @@ int	main(int argc, char **argv)
 			ft_free(ps, 0);
 		if (char_to_int(ps, argc - 1, argv) == 1)
 			ft_free(ps, 0);
-		if (ft_check_order(ps, argc - 1) == 1)
-			ft_free(ps, 1);
-		if (choose_args(argc - 1, ps) == 1)
+		if (ft_check_repeat_numbers(ps) == 1)
 			ft_free(ps, 0);
+//		if (ft_check_order(ps, argc - 1) == 1)
+//			ft_free(ps, 1);
+		if (choose_args(argc - 1, ps) == 1)
+			ft_free(ps, 1);
 	}
 	ft_free(ps, 1);
 	return (0);

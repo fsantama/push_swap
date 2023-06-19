@@ -6,7 +6,7 @@
 /*   By: fsantama <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 14:00:46 by fsantama          #+#    #+#             */
-/*   Updated: 2023/06/16 14:54:09 by fsantama         ###   ########.fr       */
+/*   Updated: 2023/06/19 13:37:59 by fsantama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,10 @@ int	ft_check_repeat_numbers(ps_list *ps)
 	i = 0;
 	while(i < ps->na)
 	{
-		if (ft_check_repeat(ps, ps->sa[i], i))
+		if (ft_check_repeat(ps, ps->sa[i], i) == 0)
 			i++;
 		else
 		{
-//			ft_putstr_fd("Error\n", 2);
 			return (1);
 		}
 	}
