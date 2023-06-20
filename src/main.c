@@ -6,7 +6,7 @@
 /*   By: fsantama <fsantama@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/31 18:45:00 by fsantama          #+#    #+#             */
-/*   Updated: 2023/06/19 17:14:56 by fsantama         ###   ########.fr       */
+/*   Updated: 2023/06/20 13:59:43 by fsantama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,10 @@ int	choose_args(int argc, ps_list *ps)
 			ft_2args(ps->sa);
 		if (argc == 3)
 			ft_3args(ps, ps->sa);
-//		if (argc == 4)
-//			ft_4 args(ps, ps->sa);
+		if (argc == 4)
+			ft_4args(ps, ps->sa);
+//		if (argc == 5)
+			ft_5args(ps, ps->sa);
 	}
 	return (0);
 }
