@@ -1,44 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check_repeat_numbers.c                          :+:      :+:    :+:   */
+/*   ft_100args.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fsantama <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/16 14:00:46 by fsantama          #+#    #+#             */
-/*   Updated: 2023/06/20 18:46:00 by fsantama         ###   ########.fr       */
+/*   Created: 2023/06/20 19:09:00 by fsantama          #+#    #+#             */
+/*   Updated: 2023/06/20 19:11:36 by fsantama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-int	ft_check_repeat(ps_list *ps, int n, int index)
+void	ft_100args(ps_list *ps, int size)
 {
-	int	i;
-
-	i = 0;
-	while (i < index)
-	{
-		if (ps->sa[i] == n)
-			return (1);
-		i++;
-	}
-	return (0);
-}
-
-int	ft_check_repeat_numbers(ps_list *ps)
-{
-	int	i;
-
-	i = 0;
-	while (i < ps->na)
-	{
-		if (ft_check_repeat(ps, ps->sa[i], i) == 0)
-			i++;
-		else
-		{
-			return (1);
-		}
-	}
-	return (0);
+	ft_index(ps, size);
 }

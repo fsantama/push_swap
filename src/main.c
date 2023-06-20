@@ -6,14 +6,12 @@
 /*   By: fsantama <fsantama@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/31 18:45:00 by fsantama          #+#    #+#             */
-/*   Updated: 2023/06/20 13:59:43 by fsantama         ###   ########.fr       */
+/*   Updated: 2023/06/20 18:44:46 by fsantama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-// Seleccionamos la catidad de argumentos que recibe el programa, en función
-// de estos, ordenamos de una manera u otra
 int	choose_args(int argc, ps_list *ps)
 {
 	if (ft_check_order(ps, argc) == 1)
@@ -26,12 +24,16 @@ int	choose_args(int argc, ps_list *ps)
 			ft_3args(ps, ps->sa);
 		if (argc == 4)
 			ft_4args(ps, ps->sa);
-//		if (argc == 5)
+		if (argc == 5)
 			ft_5args(ps, ps->sa);
+		if (argc > 5 && argc < 101)
+			ft_100args(ps, argc);
+		if (argc > 100)
+			ft_500args(ps, argc);
 	}
 	return (0);
 }
-// Pasamos los argumentos de tipo char a int
+
 int	char_to_int(ps_list *ps, int argc, char **argv)
 {
 	int	i;
@@ -42,13 +44,11 @@ int	char_to_int(ps_list *ps, int argc, char **argv)
 //		if (ft_check_num(argv[i + 1]) == 1)
 //			return (1);
 		ps->sa[i] = ft_atoi_long(argv[i]);
-//		printf(" valor de sa[%d] = %d", i, ps->sa[i]);
 		i++;
 	}
 	return (0);
 }
 
-// Reservamos memoria para utilizarlas en la siguiente función
 int	start_stack(ps_list *ps, int size)
 {
 	ps->sa = malloc(sizeof(int) * size);
@@ -79,7 +79,7 @@ int	main(int argc, char **argv)
 {
 	ps_list	*ps;
 
-	atexit(leaks);
+//	atexit(leaks);
 	ps = malloc(sizeof(ps_list));
 	if (!ps)
 		return (0);
@@ -96,8 +96,6 @@ int	main(int argc, char **argv)
 			ft_free(ps, 0);
 		if (ft_check_repeat_numbers(ps) == 1)
 			ft_free(ps, 0);
-//		if (ft_check_order(ps, argc - 1) == 1)
-//			ft_free(ps, 1);
 		if (choose_args(argc - 1, ps) == 1)
 			ft_free(ps, 1);
 	}

@@ -1,41 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_4args.c                                         :+:      :+:    :+:   */
+/*   ft_5args.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fsantama <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/20 11:35:55 by fsantama          #+#    #+#             */
-/*   Updated: 2023/06/20 18:45:26 by fsantama         ###   ########.fr       */
+/*   Created: 2023/06/20 16:07:45 by fsantama          #+#    #+#             */
+/*   Updated: 2023/06/20 16:53:50 by fsantama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-void	ft_4args(ps_list *ps, int *n)
+void	ft_5args_2(ps_list *ps, int *n)
 {
-	if (ps->na == 4)
+	if (n[0] > n[3] && n[1] > n[3] && n[2] > n[3] && n[3] < n[4])
 	{
-		if (n[0] < n[1] && n[0] < n[2] && n[0] < n[3])
+		ft_rra(ps);
+		ft_rra(ps);
+		ft_pb(ps);
+	}
+	if (n[0] > n[4] && n[1] > n[4] && n[2] > n[4] && n[3] > n[4])
+	{
+		ft_rra(ps);
+		ft_pb(ps);
+	}
+}
+
+void	ft_5args(ps_list *ps, int *n)
+{
+	if (ps->na == 5)
+	{
+		if (n[0] < n[1] && n[0] < n[2] && n[0] < n[3] && n[0] < n[4])
 			ft_pb(ps);
-		else if (n[0] > n[1] && n[1] < n[2] && n[1] < n[3])
+		if (n[0] > n[1] && n[1] < n[2] && n[1] < n[3] && n[1] < n[4])
 		{
 			ft_sa(ps->sa);
 			ft_pb(ps);
 		}
-		else if (n[0] > n[2] && n[1] > n[2] && n[2] < n[3])
+		if (n[0] > n[2] && n[1] > n[2] && n[2] < n[3] && n[2] < n[4])
 		{
 			ft_ra(ps);
 			ft_sa(ps->sa);
 			ft_pb(ps);
 		}
-		else if (n[0] > n[3] && n[1] > n[3] && n[2] > n[3])
-		{
-			ft_rra(ps);
-			ft_pb(ps);
-		}
+		ft_5args_2(ps, n);
 	}
-	if (ps->na == 3)
-		ft_3args(ps, ps->sa);
+	ft_4args(ps, n);
 	ft_pa(ps);
 }

@@ -6,7 +6,7 @@
 /*   By: fsantama <fsantama@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/31 18:38:30 by fsantama          #+#    #+#             */
-/*   Updated: 2023/06/20 13:39:49 by fsantama         ###   ########.fr       */
+/*   Updated: 2023/06/20 19:13:01 by fsantama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,5 +47,9 @@ void	ft_rra(ps_list *ps);
 void	ft_4args(ps_list *ps, int *n);
 void	ft_pb(ps_list *ps);
 void	ft_pa(ps_list *ps);
+void	ft_5args(ps_list *ps, int *n);
+void	ft_5args_2(ps_list *ps, int *n);
+void	ft_100args(ps_list *ps, int size);
+void	ft_index(ps_list *ps, int size);
 
 #endif
