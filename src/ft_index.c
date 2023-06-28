@@ -1,31 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check_num.c                                     :+:      :+:    :+:   */
+/*   ft_index.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fsantama <fsantama@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: fsantama <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/13 11:44:12 by fsantama          #+#    #+#             */
-/*   Updated: 2023/06/28 12:53:55 by fsantama         ###   ########.fr       */
+/*   Created: 2023/06/22 13:09:21 by fsantama          #+#    #+#             */
+/*   Updated: 2023/06/26 11:55:25 by fsantama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-int	ft_check_num(char *str)
+void	ft_index(ps_list *ps, int size)
 {
 	int	i;
+	int	j;
 
 	i = 0;
-	if (str[i] == '-')
-		i++;
-	if (str[i] == 0)
-		return (1);
-	while (str[i])
+	j = 0;
+	while (i <= size)
 	{
-		if (ft_isdigit(str[i]) == 0)
-			return (1);
-		i++;
+		if (ps->sa[i] != ps->sc[j])
+			j++;
+		else
+		{
+			ps->sa[i] = j;
+			i++;
+			j = 0;
+		}
 	}
-	return (0);
+/*	i = 0;
+	while (ps->sa[i])
+	{
+		printf("Valor de sa[%d] = %d\n", i, ps->sa[i]);
+		i++;
+	}*/
 }

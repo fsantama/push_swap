@@ -6,7 +6,7 @@
 /*   By: fsantama <fsantama@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 12:31:10 by fsantama          #+#    #+#             */
-/*   Updated: 2023/06/14 18:36:42 by fsantama         ###   ########.fr       */
+/*   Updated: 2023/06/27 11:01:53 by fsantama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,11 @@ void	ft_free2(ps_list *ps)
 	{
 		free(ps->sa);
 		ps->sa = 0;
+	}
+	if (ps->sc)
+	{
+		free(ps->sc);
+		ps->sc = 0;
 	}
 	if (ps->sb)
 	{
@@ -40,6 +45,8 @@ void	ft_free(ps_list *ps, int action)
 	{
 		if (ps->sa)
 			free(ps->sa);
+		if (ps->sc)
+			free(ps->sc);
 		if (ps->sb)
 			free(ps->sb);
 		if (ps)

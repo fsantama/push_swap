@@ -6,7 +6,7 @@
 /*   By: fsantama <fsantama@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 16:08:45 by fsantama          #+#    #+#             */
-/*   Updated: 2023/06/14 16:14:01 by fsantama         ###   ########.fr       */
+/*   Updated: 2023/06/28 12:30:26 by fsantama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,12 @@ long	ft_atoi_long(const char *str)
 	b = 0;
 	while ((str[i] >= '\t' && str[i] <= '\r') || str[i] == 32)
 		i++;
-	if (str[i] == 45)
-		sign *= -1;
-	if (str[i] == 43 || sign == -1)
+	if (str[i] == 43 || str[i] == 45)
+	{
+		if (str[i] == 45)
+			sign *= -1;
 		i++;
+	}
 	while (str[i] >= '0' && str[i] <= '9')
 	{
 		b = (str[i] - '0') + (b * 10);

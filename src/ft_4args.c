@@ -6,7 +6,7 @@
 /*   By: fsantama <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 11:35:55 by fsantama          #+#    #+#             */
-/*   Updated: 2023/06/20 18:45:26 by fsantama         ###   ########.fr       */
+/*   Updated: 2023/06/27 18:14:45 by fsantama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	ft_4args(ps_list *ps, int *n)
 {
-	if (ps->na == 4)
-	{
+//	if (ps->na == 4)
+//	{
 		if (n[0] < n[1] && n[0] < n[2] && n[0] < n[3])
 			ft_pb(ps);
 		else if (n[0] > n[1] && n[1] < n[2] && n[1] < n[3])
@@ -34,7 +34,7 @@ void	ft_4args(ps_list *ps, int *n)
 			ft_rra(ps);
 			ft_pb(ps);
 		}
-	}
+//	}
 	if (ps->na == 3)
 		ft_3args(ps, ps->sa);
 	ft_pa(ps);

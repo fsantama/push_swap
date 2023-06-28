@@ -1,31 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check_num.c                                     :+:      :+:    :+:   */
+/*   ft_20args.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fsantama <fsantama@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: fsantama <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/13 11:44:12 by fsantama          #+#    #+#             */
-/*   Updated: 2023/06/28 12:53:55 by fsantama         ###   ########.fr       */
+/*   Created: 2023/06/26 12:14:08 by fsantama          #+#    #+#             */
+/*   Updated: 2023/06/27 13:55:26 by fsantama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/push_swap.h"
+#include "../src/push_swap.h"
 
-int	ft_check_num(char *str)
+void	ft_20args(ps_list *ps)
+{
+	
+}
+
+void	ft_20args(ps_list *ps)
 {
 	int	i;
+	int	j;
 
 	i = 0;
-	if (str[i] == '-')
-		i++;
-	if (str[i] == 0)
-		return (1);
-	while (str[i])
+	j = ps->lsc;
+	while (ps->nb <= ps->(size / 2))
 	{
-		if (ft_isdigit(str[i]) == 0)
-			return (1);
-		i++;
+		if (ps->sa[0] == i)
+		{
+			pb(ps);
+			i--;
+		}
+		else
+			ra(ps);
 	}
-	return (0);
+	ft_20args_sb(ps);
 }

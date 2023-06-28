@@ -1,32 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_100args.c                                       :+:      :+:    :+:   */
+/*   ft_sort_sc.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fsantama <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/20 19:09:00 by fsantama          #+#    #+#             */
-/*   Updated: 2023/06/27 11:05:12 by fsantama         ###   ########.fr       */
+/*   Created: 2023/06/21 13:02:45 by fsantama          #+#    #+#             */
+/*   Updated: 2023/06/26 11:56:09 by fsantama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-void	ft_100args(ps_list *ps, int size)
+void	ft_sort_sc(ps_list *ps, int size)
 {
-	ps->lsc = size - 1;
-	ps->size = size;
-	ft_sort_sc(ps, size);
-	ft_index(ps, size);
-/*	i = 0;
-	while (ps->sa[i])
+	int	i;
+	int	j;
+
+	i = 0;
+	j = 0;
+	while (j < size)
 	{
-		printf("Valor de sa[%d] = %d\n", i, ps->sa[i]);
-		i++;
+		while (i < size - 1)
+		{
+			if (ps->sc[i] > ps->sc[i + 1])
+			{
+				ft_swap(&ps->sc[i], &ps->sc[i + 1]);
+			}
+			i++;
+		}
+		i = 0;
+		j++;
 	}
-	*/
-//	if (size < 20)
-//		ft_20args(ps, size);
-//	else
-//		ft_order(ps, size);
+	i = 0;
+/*	while (ps->sc[i])
+	{
+		printf("Valor de sc[%d] = %d\n", i, ps->sc[i]);
+		i++;
+	} */
 }

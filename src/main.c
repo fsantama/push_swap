@@ -6,7 +6,7 @@
 /*   By: fsantama <fsantama@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/31 18:45:00 by fsantama          #+#    #+#             */
-/*   Updated: 2023/06/20 18:44:46 by fsantama         ###   ########.fr       */
+/*   Updated: 2023/06/27 11:01:22 by fsantama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ int	choose_args(int argc, ps_list *ps)
 			ft_5args(ps, ps->sa);
 		if (argc > 5 && argc < 101)
 			ft_100args(ps, argc);
-		if (argc > 100)
-			ft_500args(ps, argc);
+//		if (argc > 100)
+//			ft_500args(ps, argc);
 	}
 	return (0);
 }
@@ -41,9 +41,8 @@ int	char_to_int(ps_list *ps, int argc, char **argv)
 	i = 0;
 	while (i < argc)
 	{
-//		if (ft_check_num(argv[i + 1]) == 1)
-//			return (1);
 		ps->sa[i] = ft_atoi_long(argv[i]);
+		ps->sc[i] = ft_atoi_long(argv[i]);
 		i++;
 	}
 	return (0);
@@ -57,10 +56,17 @@ int	start_stack(ps_list *ps, int size)
 		free(ps);
 		return (1);
 	}
+	ps->sc = malloc(sizeof(int) * size);
+	if (!ps->sc)
+	{
+		free(ps);
+		return (1);
+	}
 	ps->sb = malloc(sizeof(int) * size);
 	if (!ps->sb)
 	{
 		free(ps->sa);
+		free(ps->sc);
 		free(ps);
 		return (1);
 	}
