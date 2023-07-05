@@ -6,7 +6,7 @@
 /*   By: fsantama <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/19 16:41:17 by fsantama          #+#    #+#             */
-/*   Updated: 2023/06/19 16:51:27 by fsantama         ###   ########.fr       */
+/*   Updated: 2023/07/04 12:06:23 by fsantama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_ra(ps_list *ps)
 	int	i;
 
 	i = 0;
-	while (i + 1 < ps->na)
+	while (i < ps->na - 1)
 	{
 		ft_swap(&ps->sa[i], &ps->sa[i + 1]);
 		i++;

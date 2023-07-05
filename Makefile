@@ -6,7 +6,7 @@
 #    By: fsantama <fsantama@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/24 13:37:38 by fsantama          #+#    #+#              #
-#    Updated: 2023/06/22 13:09:58 by fsantama         ###   ########.fr        #
+#    Updated: 2023/07/04 18:12:44 by fsantama         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,6 +48,9 @@ SRCS	=	src/main.c \
 			src/ft_100args.c \
 			src/ft_sort_sc.c \
 			src/ft_index.c \
+			src/ft_20args.c \
+			src/ft_rb.c \
+			src/ft_order.c \
 
 OBJS	=	$(SRCS:.c=.o)
 

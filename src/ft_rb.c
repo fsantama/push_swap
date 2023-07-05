@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_100args.c                                       :+:      :+:    :+:   */
+/*   ft_rb.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fsantama <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/20 19:09:00 by fsantama          #+#    #+#             */
-/*   Updated: 2023/07/05 13:32:09 by fsantama         ###   ########.fr       */
+/*   Created: 2023/07/04 12:03:48 by fsantama          #+#    #+#             */
+/*   Updated: 2023/07/04 12:59:06 by fsantama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-void	ft_100args(ps_list *ps, int size)
+void	ft_rb(ps_list *ps)
 {
-	ps->lsc = size - 1;
-	ps->size = size;
-	ps->action = 0;
-	ft_sort_sc(ps, size);
-	ft_index(ps, size);
-	if (size < 21)
-		ft_20args(ps);
-	else
-		ft_order(ps);
+	int	i;
+
+	i = 0;
+	while (i < ps->nb - 1)
+	{
+		ft_swap(&ps->sb[i], &ps->sb[i + 1]);
+		i++;
+	}
+	ft_putstr_fd("rb\n", 1);
 }
