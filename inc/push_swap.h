@@ -6,7 +6,7 @@
 /*   By: fsantama <fsantama@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/31 18:38:30 by fsantama          #+#    #+#             */
-/*   Updated: 2023/07/04 18:10:27 by fsantama         ###   ########.fr       */
+/*   Updated: 2023/07/10 17:53:36 by fsantama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,14 @@ typedef struct	push_swap_list
 	int	na;
 	int	nb;
 	int	size;
-	int	nab;
 	int	lsc;
 	int	action;
+	int	numbers;
+	int	div;
+	int	step;
+	int	size_block;
+	int	sizemax;
+
 }	ps_list;
 
 int		main(int argc, char **argv);
@@ -61,5 +66,6 @@ void	sb_20args(ps_list *ps);
 void	ft_rb(ps_list *ps);
 void	sa_20args(ps_list *ps, int i);
 void	ft_order(ps_list *ps);
+void	order_sb(ps_list *ps);
 
 #endif
