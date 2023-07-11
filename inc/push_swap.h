@@ -6,7 +6,7 @@
 /*   By: fsantama <fsantama@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/31 18:38:30 by fsantama          #+#    #+#             */
-/*   Updated: 2023/07/11 13:41:47 by fsantama         ###   ########.fr       */
+/*   Updated: 2023/07/11 17:39:33 by fsantama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,5 +68,6 @@ void	sa_20args(ps_list *ps, int i);
 void	ft_order(ps_list *ps);
 void	order_sb(ps_list *ps);
 void	ft_rrb(ps_list *ps);
+void	ft_500args(ps_list *ps, int size);
 
 #endif

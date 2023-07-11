@@ -6,7 +6,7 @@
 /*   By: fsantama <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 18:11:45 by fsantama          #+#    #+#             */
-/*   Updated: 2023/07/11 17:24:33 by fsantama         ###   ########.fr       */
+/*   Updated: 2023/07/11 17:53:02 by fsantama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ void	rotate_sb(ps_list *ps)
 		ft_rrb(ps);
 }
 
-int	check_num_max(ps_list *ps)
+void	check_num_max(ps_list *ps)
 {
 	int	i;
 
@@ -81,9 +81,9 @@ int	check_num_max(ps_list *ps)
 		i++;
 	}
 	if ((ps->nb / 2) -i >= 0)
-		return (0);
+		last_order(ps);
 	else
-		return (1);
+		rotate_sb(ps);
 }
 
 void	order_sb(ps_list *ps)
@@ -101,10 +101,7 @@ void	order_sb(ps_list *ps)
 //			ft_ra(ps);
 //			ps->action = 2;
 //		}
-		if (check_num_max(ps) == 1)
-			rotate_sb(ps);
-		else
-			last_order(ps);
+		check_num_max(ps);
 	}
 }
 
