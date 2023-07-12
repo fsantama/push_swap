@@ -6,7 +6,7 @@
 /*   By: fsantama <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 18:11:45 by fsantama          #+#    #+#             */
-/*   Updated: 2023/07/11 17:53:02 by fsantama         ###   ########.fr       */
+/*   Updated: 2023/07/12 17:30:50 by fsantama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,13 @@ void	last_order(ps_list *ps)
 			ps->action = 0;
 			ft_sa(ps->sa);
 		}
-//		if (ps->action == 2)
-//		{
-//			ps->lsc = ps->lsc - 2;
-//			ps->action = 0;
-//			ft_sa(ps->sa);
-//			ft_rra(ps);
-//		}
+		if (ps->action == 2)
+		{
+			ps->lsc = ps->lsc - 2;
+			ps->action = 0;
+			ft_sa(ps->sa);
+			ft_rra(ps);
+		}
 	}
 	else
 		ft_rb(ps);
@@ -43,12 +43,12 @@ void	last_order(ps_list *ps)
 
 void	rotate_sb(ps_list *ps)
 {
-//	if (ps->sb[0] == ps->lsc -2 && ps->action == 1)
-//	{
-//		ft_pa(ps);
-//		ft_ra(ps);
-//		ps->action = 2;
-//	} 
+	if (ps->sb[0] == ps->lsc -2 && ps->action == 1)
+	{
+		ft_pa(ps);
+		ft_ra(ps);
+		ps->action = 2;
+	} 
 	if (ps->sb[0] == ps->lsc - 1)
 	{
 		ft_pa(ps);
@@ -68,6 +68,7 @@ void	rotate_sb(ps_list *ps)
 	else
 		ft_rrb(ps);
 }
+
 
 void	check_num_max(ps_list *ps)
 {
@@ -95,12 +96,12 @@ void	order_sb(ps_list *ps)
 			ft_pa(ps);
 			ps->lsc--;
 		}
-//		if (ps->sb[0] == ps->lsc -2 && ps->action == 1)
-//		{
-//			ft_pa(ps);
-//			ft_ra(ps);
-//			ps->action = 2;
-//		}
+		if (ps->sb[0] == ps->lsc -2 && ps->action == 1)
+		{
+			ft_pa(ps);
+			ft_ra(ps);
+			ps->action = 2;
+		}
 		check_num_max(ps);
 	}
 }
@@ -108,8 +109,8 @@ void	order_sb(ps_list *ps)
 void	ft_order(ps_list *ps)
 {
 	ps->numbers = (ps->size / ps->div) * (ps->step);
-//	if (ps->step == ps->div)
-//		ps->numbers = ps->sizemax - 3;
+	if (ps->step == ps->div)
+		ps->numbers = ps->size - 3;
 	while (ps->nb < ps->numbers && ps->step <= ps->div)
 	{
 		if (ps->sa[0] < ps->numbers)
@@ -122,11 +123,11 @@ void	ft_order(ps_list *ps)
 			ft_ra(ps);
 	}
 	ps->step++;
-//	if (ps->nb == ps->sizemax - 3)
-//	{
-//		ft_3args(ps, ps->sa);
-//		ps->lsc = ps->lsc - 3;
-//	}
+	if (ps->nb == ps->size - 3)
+	{
+		ft_3args(ps, ps->sa);
+		ps->lsc = ps->lsc - 3;
+	}
 	if (ps->step <= ps->div)
 		ft_order(ps);
 	while (ps->step-- > 0)
